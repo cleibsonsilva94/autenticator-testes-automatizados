@@ -1,4 +1,3 @@
 module.exports = {
-UrlLogin: "https://www.saucedemo.com/",
-UrlHome: "https://www.saucedemo.com/inventory.html",
+UrlLogin: "http://127.0.0.1:8000/accounts/login/",
 }

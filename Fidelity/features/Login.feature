@@ -3,17 +3,27 @@
 @login
 Feature: Login
 
+
     @validLogin
     # Test Number: CT001
-    Scenario: performLoginWithValidCredentials
+    Scenario: registerUser
         Given I am on the Swag Labs login page
         And I click on the Username field and type "standard_user"
         And I click on the Password field and type "secret_sauce"
         When I click on login
         Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
 
-    @invalidLogin
+    @validLogin
     # Test Number: CT002
+    Scenario: performLoginWithValidCredentials
+        Given I am on the Swag Labs login page
+        And I click on the User field and type "Tester Login"
+        And I click on the Password field and type "Testador01"
+        When I click on Entrar
+        Then I should be redirected to the homepage "http://127.0.0.1:8000/accounts/dashboard/"
+
+    @invalidLogin
+    # Test Number: CT003
     Scenario: attemptingToLogInWithInvalidCredentials
         Given I am on the Swag Labs login page
         And I click on the Username field and type "standard_user"
@@ -22,7 +32,7 @@ Feature: Login
         Then I should see the error message "Epic sadface: Username and password do not match any user in this service"
 
     @emptyUsername
-    # Test Number: CT003
+    # Test Number: CT004
     Scenario: attemptingToLogInWithoutEnteringAUsername
         Given I am on the Swag Labs login page
         And I click on the Password field and type "secret_sauce"
@@ -30,7 +40,7 @@ Feature: Login
         Then I should see the error message "Epic sadface: Username is required"
 
     @emptyPassword
-    # Test Number: CT004
+    # Test Number: CT005
     Scenario: attemptingToLogInWithoutEnteringAPassword
         Given I am on the Swag Labs login page
         And I click on the Username field and type "standard_user"

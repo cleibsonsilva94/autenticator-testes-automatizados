@@ -12,7 +12,7 @@ Given('I am on the Swag Labs login page', async function () {
   await driver.get(url.UrlLogin);
 });
 
-When('I click on the Username field and type {string}', async function (username) {
+When('I click on the User field and type {string}', async function (username) {
   const driver = await getDriver();
   await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_FOR_USERNAME_FIELD)), timeout);
   await driver.findElement(By.xpath(xpathsLoginPage.XPATH_FOR_USERNAME_FIELD)).sendKeys(username);
@@ -24,7 +24,7 @@ When('I click on the Password field and type {string}', async function (password
   await driver.findElement(By.xpath(xpathsLoginPage.XPATH_FOR_PASSWORD_FIELD)).sendKeys(password);
 });
 
-When('I click on login', async function () {
+When('I click on Entrar', async function () {
   const driver = await getDriver();
   await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_LOGIN_BUTTON)), timeout);
   await driver.findElement(By.xpath(xpathsLoginPage.XPATH_LOGIN_BUTTON)).click();
@@ -33,14 +33,14 @@ When('I click on login', async function () {
 Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
   const driver = await getDriver();
   try {
-    await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_IVENTORY_HOME_PAGE)), timeout);
+    await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.LOGGED_AREA)), timeout);
     const currentUrl = await driver.getCurrentUrl();
     if (currentUrl !== expectedUrl) {
       throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
     }
     console.log(`Successfully redirected to the homepage: ${currentUrl}`);
   } catch (error) {
-    console.log(`Error: Element with XPath '${xpathsLoginPage.XPATH_IVENTORY_HOME_PAGE}' not found`);
+    console.log(`Error: Element with XPath '${xpathsLoginPage.LOGGED_AREA}' not found`);
     throw error;
   }
 });

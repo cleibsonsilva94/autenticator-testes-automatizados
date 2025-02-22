@@ -26,7 +26,7 @@ Feature: Login
 
     @invalidLogin
     # Test Number: CT003
-     Scenario: performLoginWithValidCredentials
+     Scenario: attemptingToLogInWithInvalidCredentials
         Given I am on the Swag Labs login page
         And I click on the User field and type "Test Login"
         And I click on the Password field and type "testador01"
@@ -37,14 +37,16 @@ Feature: Login
     # Test Number: CT004
     Scenario: attemptingToLogInWithoutEnteringAUsername
         Given I am on the Swag Labs login page
-        And I click on the Password field and type "secret_sauce"
-        When I click on login
-        Then I should see the error message "Epic sadface: Username is required"
+        And I click on the User field and type ""
+        And I click on the Password field and type "testador01"
+        When I click on Entrar
+        Then I shouldnt be directed to the to the homepage "http://127.0.0.1:8000/accounts/dashboard/" 
 
     @emptyPassword
     # Test Number: CT005
     Scenario: attemptingToLogInWithoutEnteringAPassword
         Given I am on the Swag Labs login page
-        And I click on the Username field and type "standard_user"
-        When I click on login
-        Then I should see the error message "Epic sadface: Password is required"
+        And I click on the User field and type "Tester Login"
+        And I click on the Password field and type ""
+        When I click on Entrar
+        Then I shouldnt be directed to the to the homepage "http://127.0.0.1:8000/accounts/dashboard/"

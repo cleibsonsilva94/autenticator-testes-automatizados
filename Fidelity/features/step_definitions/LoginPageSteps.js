@@ -9,7 +9,7 @@ const timeout = 80000;
 
 Given('I am on the Swag Labs login page', async function () {
   const driver = await getDriver();
-  await driver.get(url.UrlLogin);
+  await driver.get(url.UrlLogin); ""
 });
 
 When('I click on the User field and type {string}', async function (username) {
@@ -64,7 +64,7 @@ Then('I should see the welcome message {string}', async function (expectedMessag
 Then('I should see the error message {string}', async function (expectedMessage) {
   const driver = await getDriver();
   const currentUrl = await driver.getCurrentUrl();
-  
+
   if (currentUrl === url.UrlHome) {
     throw new Error('The user was redirected to the homepage with invalid credentials.');
   }
@@ -79,4 +79,15 @@ Then('I should see the error message {string}', async function (expectedMessage)
     throw new Error(`Expected error message to be "${expectedMessage}", but got "${actualMessage}"`);
   }
   console.log(`Error message displayed as expected: "${actualMessage}"`);
+});
+
+Then('I shouldnt be directed to the to the homepage {string}', async function (unexpectedUrl) {
+  const driver = await getDriver();
+  const currentUrl = await driver.getCurrentUrl();
+
+  if (currentUrl === unexpectedUrl) {
+    throw new Error(`Unexpectedly redirected to logged in area: ${currentUrl}`);
+  } else {
+    console.log(`Not directed to logged in area: ${currentUrl}, as expected.`);
+  }
 });

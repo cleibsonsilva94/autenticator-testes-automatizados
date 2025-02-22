@@ -4,7 +4,7 @@
 Feature: Login
 
 
-    @validLogin
+    @registerUser
     # Test Number: CT001
     Scenario: registerUser
         Given I am on the Swag Labs login page
@@ -18,7 +18,7 @@ Feature: Login
     Scenario: performLoginWithValidCredentials
         Given I am on the Swag Labs login page
         And I click on the User field and type "Tester Login"
-        And I click on the Password field and type "Testador01"
+        And I click on the Password field and type "testador01"
         When I click on Entrar
         Then I should be redirected to the homepage "http://127.0.0.1:8000/accounts/dashboard/"
 

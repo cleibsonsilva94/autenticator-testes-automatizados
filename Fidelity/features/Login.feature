@@ -21,6 +21,8 @@ Feature: Login
         And I click on the Password field and type "testador01"
         When I click on Entrar
         Then I should be redirected to the homepage "http://127.0.0.1:8000/accounts/dashboard/"
+        And I should see the welcome message "Você está logado no sistema."
+
 
     @invalidLogin
     # Test Number: CT003

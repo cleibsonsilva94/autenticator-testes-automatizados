@@ -26,12 +26,12 @@ Feature: Login
 
     @invalidLogin
     # Test Number: CT003
-    Scenario: attemptingToLogInWithInvalidCredentials
+     Scenario: performLoginWithValidCredentials
         Given I am on the Swag Labs login page
-        And I click on the Username field and type "standard_user"
-        And I click on the Password field and type "secret_sauce"
-        When I click on login
-        Then I should see the error message "Epic sadface: Username and password do not match any user in this service"
+        And I click on the User field and type "Test Login"
+        And I click on the Password field and type "testador01"
+        When I click on Entrar
+        And I should see the error message "Credenciais inválidas" 
 
     @emptyUsername
     # Test Number: CT004

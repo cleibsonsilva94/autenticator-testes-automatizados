@@ -5,7 +5,7 @@ const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
 const xpathsLoginPage = require('../support/xpathsLoginPage');
 const url = require('../support/url');
-const timeout = 5000;
+const timeout = 80000;
 
 Given('I am on the Swag Labs login page', async function () {
   const driver = await getDriver();

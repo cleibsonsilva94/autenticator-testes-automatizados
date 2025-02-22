@@ -3,16 +3,6 @@
 @login
 Feature: Login
 
-
-    @registerUser
-    # Test Number: CT001
-    Scenario: registerUser
-        Given I am on the Swag Labs login page
-        And I click on the Username field and type "standard_user"
-        And I click on the Password field and type "secret_sauce"
-        When I click on login
-        Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
-
     @validLogin
     # Test Number: CT002
     Scenario: performLoginWithValidCredentials
@@ -26,12 +16,12 @@ Feature: Login
 
     @invalidLogin
     # Test Number: CT003
-     Scenario: attemptingToLogInWithInvalidCredentials
+    Scenario: attemptingToLogInWithInvalidCredentials
         Given I am on the Swag Labs login page
         And I click on the User field and type "Test Login"
         And I click on the Password field and type "testador01"
         When I click on Entrar
-        And I should see the error message "Credenciais inválidas" 
+        And I should see the error message "Credenciais inválidas"
 
     @emptyUsername
     # Test Number: CT004
@@ -40,7 +30,7 @@ Feature: Login
         And I click on the User field and type ""
         And I click on the Password field and type "testador01"
         When I click on Entrar
-        Then I shouldnt be directed to the to the homepage "http://127.0.0.1:8000/accounts/dashboard/" 
+        Then I shouldnt be directed to the to the homepage "http://127.0.0.1:8000/accounts/dashboard/"
 
     @emptyPassword
     # Test Number: CT005

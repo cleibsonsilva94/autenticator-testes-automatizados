@@ -6,7 +6,7 @@ Feature: Login
     @validLogin
     # Test Number: CT002
     Scenario: performLoginWithValidCredentials
-        Given I am on the Swag Labs login page
+        Given I am on the Autenticator login page
         And I click on the User field and type "Tester Login"
         And I click on the Password field and type "testador01"
         When I click on Entrar
@@ -17,7 +17,7 @@ Feature: Login
     @invalidLogin
     # Test Number: CT003
     Scenario: attemptingToLogInWithInvalidCredentials
-        Given I am on the Swag Labs login page
+        Given I am on the Autenticator login page
         And I click on the User field and type "Test Login"
         And I click on the Password field and type "testador01"
         When I click on Entrar
@@ -26,7 +26,7 @@ Feature: Login
     @emptyUsername
     # Test Number: CT004
     Scenario: attemptingToLogInWithoutEnteringAUsername
-        Given I am on the Swag Labs login page
+        Given I am on the Autenticator login page
         And I click on the User field and type ""
         And I click on the Password field and type "testador01"
         When I click on Entrar
@@ -35,7 +35,7 @@ Feature: Login
     @emptyPassword
     # Test Number: CT005
     Scenario: attemptingToLogInWithoutEnteringAPassword
-        Given I am on the Swag Labs login page
+        Given I am on the Autenticator login page
         And I click on the User field and type "Tester Login"
         And I click on the Password field and type ""
         When I click on Entrar

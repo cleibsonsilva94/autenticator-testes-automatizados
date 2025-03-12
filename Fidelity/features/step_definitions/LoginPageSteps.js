@@ -7,7 +7,7 @@ const xpathsLoginPage = require('../support/xpathsLoginPage');
 const url = require('../support/url');
 const timeout = 80000;
 
-Given('I am on the Swag Labs login page', async function () {
+Given('I am on the Autenticator login page', async function () {
   const driver = await getDriver();
   await driver.get(url.UrlLogin); ""
 });

@@ -38,7 +38,6 @@ Then('I should see the error message {string}', async function (expectedMessage)
     throw new Error('The user was redirected to the homepage with invalid credentials.');
   }
 
-  console.log('The user was not redirected to the homepage.');
   const errorElement = await driver.wait(
     until.elementLocated(By.xpath(xpathsLoginPage.XPATH_ERROR_MESSAGE)),
     timeout

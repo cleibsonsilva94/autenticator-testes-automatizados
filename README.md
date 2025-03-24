@@ -15,7 +15,7 @@ Antes de rodar os testes, certifique-se de que os seguintes componentes estão i
 
 1. Clone este repositório:  
    ```bash
-   git clone https://github.com/cleibsonsilva94/Test.js.git
+   git clone git@github.com:cleibsonsilva94/autenticator-testes-automatizados.git
    ```
 2. Certifique-se de que os requisitos acima estão instalados.  
 3. Consulte o [guia de configuração](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md) para preparar o ambiente e executar os testes.  
@@ -65,5 +65,8 @@ Para rodar os testes, utilize os seguintes comandos:
 
 Os casos de teste detalhados estão disponíveis na seguinte planilha:  
 📌 [Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/1FjYs9KdZTmmZmhtVzYMN83ZbOBA1IgQb_GH6zvUkjqI/edit?usp=sharing)  
+
+Fiz um vídeo com a execução de alguns testes:  
+[Vídeo](https://drive.google.com/file/d/1XJKAAONgsJuc1m-r53BgMDpNJISEVHDE/view?usp=sharing)
 
 ---
